@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - EnviroVista</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="App.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <div class="sss">
+          <p style="font-family: 'Brush script MT', cursive; font-size: 300%; color: #66c666;">&nbsp;&nbsp;Enviro</p>
+          <p1 style="font-family: 'Brush script MT', cursive; font-size: 300%; color: #fff;">&nbsp;&nbsp;Vista</p1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dasboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="sustainability.html">Sustainability Tips</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-content">
+    <h2>Welcome to Your Dashboard</h2>
+    <p>This is where you can track your green initiatives and contributions.</p>
+    <div class="dashboard-widget">
+        <h3>My Carbon Footprint</h3>
+        <!-- Add your carbon footprint chart or data here -->
+        <p>Placeholder for carbon footprint data.</p>
+    </div>
+
+    <div class="dashboard-widget">
+        <h3>Latest Sustainability Tips</h3>
+        <!-- Add a list of latest sustainability tips or articles here -->
+        <ul>
+            <li>Tip 1: Reduce energy consumption at home.</li>
+            <li>Tip 2: Use eco-friendly products.</li>
+            <li>Tip 3: Plant a tree in your community.</li>
+        </ul>
+    </div>
+
+    <!-- Chart Section -->
+    <div>
+      <label for="chartData">Enter Data for Chart (comma-separated):</label>
+      <input type="text" id="chartData" placeholder="e.g., 12, 19, 3, 5, 2">
+     <button style="color: black;" onclick="updateChart()">Update Chart</button> 
+    </div>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <!-- Additional Dashboard Content Goes Here -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Footer content here -->
+  </footer>
+  <script>
+    function updateChart() {
+      var inputData = document.getElementById('chartData').value;
+      var dataValues = inputData.split(',').map(value => parseInt(value.trim()));
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May','june'],
+          datasets: [{
+            label: 'Carbon Footprint',
+            data: dataValues,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+  </script>
+
+ 
+</body>
+</html>

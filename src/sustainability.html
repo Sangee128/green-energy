@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnviroVista - Sustainability Tips</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="sss">
+          <p style="font-family: 'Brush script MT', cursive; font-size: 300%; color: #66c666;">&nbsp;&nbsp;Enviro</p>
+          <p1 style="font-family: 'Brush script MT', cursive; font-size: 300%; color: #fff;">&nbsp;&nbsp;Vista</p1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dasboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="sustainability.html">Sustainability Tips</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h2>Sustainability Tips</h2><br>
+        <!-- Add sustainability tips content here -->
+        <ul id="sustainabilityTips">
+            <!-- Tips will be dynamically added here using JavaScript -->
+        </ul>
+    </div>
+
+    <!-- Footer (Similar to the homepage) -->
+    <footer>
+        <!-- Social and Page Links -->
+    </footer>
+
+    <!-- JavaScript files go here -->
+    <script src="app.js"></script>
+    <script>
+        // Sample sustainability tips data
+        const sustainabilityTipsData = [
+            "Reduce, Reuse, Recycle!",
+            "Conserve water by fixing leaks and using water-efficient appliances.",
+            "Switch to energy-efficient light bulbs and appliances.",
+            "Plant trees and support reforestation projects.",
+            "Use reusable bags and containers to reduce plastic waste."
+            // Add more tips as needed
+        ];
+
+        // Function to populate sustainability tips
+        function populateSustainabilityTips() {
+            const tipsList = document.getElementById("sustainabilityTips");
+
+            sustainabilityTipsData.forEach((tip) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = tip;
+                tipsList.appendChild(listItem);
+            });
+        }
+
+        // Call the function to populate tips when the page loads
+        window.onload = populateSustainabilityTips;
+    </script>
+</body>
+</html>
